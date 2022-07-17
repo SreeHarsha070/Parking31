@@ -105,7 +105,7 @@ const movetoFree = (num) => {
   //console.log(index)
    
       allocatedList.splice(index, 1)
-      alert(`The  slot ${num} is moved to freeup`)
+      alert(`The  slot ${num} is now available to book`)
       arr[num].status = 0;
       setAllocatedList(allocatedList)
     
@@ -130,7 +130,7 @@ const onSubmitHandler = (event) => {
       <Popover.Body>
     {/* {data.title} */}
     {data.status==1 ? 
-    <p> The Person {data.name} Already Booked this slot <br /><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
+    <p> {data.name} Already Booked <br /><br></br><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
     Move to free
   </Button></span> </p>:
     // <Button onClick={()=>{fillSlot(data.id)}}>Free Up</Button>
@@ -145,7 +145,7 @@ const onSubmitHandler = (event) => {
 return (
     <Container>
     <Row>
-        <h3 style={{textAlign:"center",marginTop:"20px",marginBottom:"20px",color:"white",textDecoration:"underline"}}>Parking Management System</h3>
+        <h3 style={{textAlign:"center",marginTop:"20px",marginBottom:"20px",textDecoration:"underline"}}>Parking Management System</h3>
         {
             arr.map((slot, index)=>{
                 return(
@@ -184,7 +184,7 @@ return (
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Exit
           </Button>
          
         </Modal.Footer>
