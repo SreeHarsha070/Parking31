@@ -22,7 +22,7 @@ function Cards() {
 
     const handleClose = () => setShow(false);
     
-    const [range, setRange] = useState(10);
+    const [range, setRange] = useState(50);
     const [cardata, setCardata] = useState([])
     const [allocatedList, setAllocatedList] = useState([2, 8, 10]);
     const emprtyslots = [];
@@ -93,12 +93,12 @@ const onSubmitHandler = (event) => {
       <Popover.Body>
     {/* {data.title} */}
     {data.status==1 ? 
-    <p> The Person {data.name} Already Allocated this slot <br /><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
+    <p> The Person {data.name} Already Allocated this slot <br /><br/><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
     Move to free
   </Button></span> </p>:
     // <Button onClick={()=>{fillSlot(data.id)}}>Free Up</Button>
     <Button variant="primary" onClick={()=>{handleShow(data.id)}}>
-        Free Up
+        Available, Book the slot
       </Button>
     }
       </Popover.Body>
