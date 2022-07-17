@@ -45,21 +45,22 @@ const arr = [];
 nameslist[2] = 'ravi';
 nameslist[8] = 'harsha';
 nameslist[10] = 'kiran';
-const min = 0;
+let min = 1;
 
 
 for(let i=1;i<=range;i++){
+    
     if(allocatedList.includes(i) == true ){
         arr[i] = {'id':i,'title':'Slot '+i,'name':nameslist[i],'status':1};  
         //setSlotlist(slotlist => [...slotlist,  {'id':i,'title':'Slot '+i,'name':nameslist[i],'status':1})
         //setSlotlist(slotlist => ({ ...slotlist, ["id"]: i,["title"]: 'Slot '+i, ["name"]: nameslist[i], ["status"]: 1 }));
-
+      
     }else if(allocatedList.includes(i) == false ){
         
         arr[i] = {'id':i,'title':'Slot '+i,'name':null,'status':0};
         //setSlotlist(slotlist => [...slotlist,  {'id':i,'title':'Slot '+i,'name':null,'status':0})
         //setSlotlist(slotlist => ({ ...slotlist, ["id"]: i,["title"]: 'Slot '+i, ["name"]: null, ["status"]: 0 }));
-
+       
     }
     
 }
@@ -76,16 +77,20 @@ useEffect(() => {
  const addMore = ()=>{
     setRange(range + 10)
  }
-const fillSlot = (num) =>{
-    const index = emprtyslots.indexOf(num)
-    
-    setAllocatedList(allocatedList => [...allocatedList, num])
-}
+
 
 const handleShow = (num) => {
-    setShow(true);
-    const index = emprtyslots.indexOf(num)
-    setSelectslotnum(num);
+    //console.log(min);
+    //console.log(num);
+    if(min < num ){
+      alert(`Slot ${min} is available.  Please choose numeric order only.`)
+    }else{
+      setShow(true);
+      const index = emprtyslots.indexOf(num)
+      setSelectslotnum(num);
+      min = num;
+    }
+    
     
 }
 
@@ -93,6 +98,7 @@ const movetoFree = (num) => {
   console.log(num)
   //setShow(true);
   const index = allocatedList.indexOf(num)
+  
   //setSelectslotnum(num);
 
 
@@ -124,12 +130,12 @@ const onSubmitHandler = (event) => {
       <Popover.Body>
     {/* {data.title} */}
     {data.status==1 ? 
-    <p> The Person {data.name} Already booked this slot. <br /><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
+    <p> The Person {data.name} Already Booked this slot <br /><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
     Move to free
   </Button></span> </p>:
     // <Button onClick={()=>{fillSlot(data.id)}}>Free Up</Button>
     <Button variant="primary" onClick={()=>{handleShow(data.id)}}>
-        Available, Book this Slot
+        Available,Book the slot
       </Button>
     }
       </Popover.Body>
