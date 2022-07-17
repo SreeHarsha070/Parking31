@@ -1,0 +1,124 @@
+.App {
+  background-color: rgb(130, 158, 149);
+  padding: 10px;
+  height: 100vh;
+}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+
+.navbar-default{
+  background-color:#42dcf4;
+  height:1cm;
+}
+/* .ranga1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("http://www.bdp.com/globalassets/projects/liverpool-one-car-park/01_liverpool-one-car-park_int3.jpg");
+  opacity: 0.2;
+  top:3cm;
+} */
+
+.border2{
+  border:solid;
+  border-width:1px;
+  border-color:#42dcf4;
+  height:1.2cm;
+}
+.border2:hover{
+  border-color:#a0d32a;
+  background-color:#a0d32a;
+}
+.ranga{
+  /* position:absolute; */
+  top:3cm;
+  width:100%;
+}
+.border1{
+  border:solid;
+  height:5cm;
+  width:3cm;
+  border-radius:0.7cm;
+  padding-top:2cm;
+  /* position:absloute; */
+ left:10cm;
+}  
+.right {
+    /* position:absolute; */
+    left:13.1cm;
+}
+.right1 {
+    /* position:absolute; */
+    left:16.2cm;
+}
+.right2 {
+    /* position:absolute; */
+    left:19.3cm;
+}
+
+.top{
+   /* position:absolute; */
+  top:5cm;
+}
+.top1{
+  /* position:absolute; */
+  top:11cm;
+} 
+.border{
+  width:8cm;
+   color:red;
+  font-family:Castellar;
+  background:linear-gradient(#59f442,#3b71dd);
+  
+}
+.active1 {
+  background-color: #42d1f4 ;
+}
+.contact{
+  position:absolute;
+  top:18cm;
+  background-color:green;
+  width:100%
+}
+span{
+  color:black;
+}
+strong{
+  color:white;
+}
