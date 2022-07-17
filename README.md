@@ -1,7 +1,7 @@
-In this Project, our main task is to Create a Parking management system with available options like :
+In this project, our main task is to Create a Parking management system with available options like:
 
 1. Booking minimum slots of 50.
-2. There after, increase slots on the count of 10 if more slots ae required.
+2. Thereafter, increase slots on the count of 10 if more slots are required.
 3. If a slot is available for free, Book that slot and take details{Name, Contact} of that person.
 4. Free up the slot
 5. If there is no specific slot mentioned, we need to allocate slots in a numerical order
