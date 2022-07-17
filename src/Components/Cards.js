@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -29,8 +29,14 @@ function Cards() {
     const [selectslotnum, setSelectslotnum] = useState(0);
     const [name, setName] = useState("")
     const [mobile, setMobile] = useState("")
-    const [slotlist, setSlotlist] = useState([])
+    const [slotlist, setSlotlist] = useState({
+      id: null,
+      title: null,
+      name: null,
+      status: null,
+    })
 
+    const [dataList, setDataList] = useState([])
 
 
 
@@ -45,14 +51,27 @@ const min = 0;
 for(let i=1;i<=range;i++){
     if(allocatedList.includes(i) == true ){
         arr[i] = {'id':i,'title':'Slot '+i,'name':nameslist[i],'status':1};  
+        //setSlotlist(slotlist => [...slotlist,  {'id':i,'title':'Slot '+i,'name':nameslist[i],'status':1})
+        //setSlotlist(slotlist => ({ ...slotlist, ["id"]: i,["title"]: 'Slot '+i, ["name"]: nameslist[i], ["status"]: 1 }));
 
     }else if(allocatedList.includes(i) == false ){
         
         arr[i] = {'id':i,'title':'Slot '+i,'name':null,'status':0};
-        //emprtyslots[i] = i;
+        //setSlotlist(slotlist => [...slotlist,  {'id':i,'title':'Slot '+i,'name':null,'status':0})
+        //setSlotlist(slotlist => ({ ...slotlist, ["id"]: i,["title"]: 'Slot '+i, ["name"]: null, ["status"]: 0 }));
+
     }
-    //setSlotlist(arr[i]);;
+    
 }
+
+useEffect(() => {
+  arr.map((slot, index)=>{
+       
+
+         setDataList(slot)
+     
+  })
+},[])
 //setSlotlist(arr);
  const addMore = ()=>{
     setRange(range + 10)
@@ -73,9 +92,18 @@ const handleShow = (num) => {
 const movetoFree = (num) => {
   console.log(num)
   //setShow(true);
-  //const index = emprtyslots.indexOf(num)
+  const index = allocatedList.indexOf(num)
   //setSelectslotnum(num);
-  
+
+
+  //console.log(index)
+   
+      allocatedList.splice(index, 1)
+      alert(`The  slot ${num} is moved to freeup`)
+      arr[num].status = 0;
+      setAllocatedList(allocatedList)
+    
+
 }
 
 
@@ -83,7 +111,10 @@ const onSubmitHandler = (event) => {
     event.preventDefault();
     alert(`The Person : ${name} Successfully booked slot ${selectslotnum} `)
     setAllocatedList(allocatedList => [...allocatedList, selectslotnum])
+    arr[selectslotnum].name = name;
     setShow(false);
+    setName("");
+    setMobile("");
   }
 
  const popover = (data) => (
@@ -93,12 +124,12 @@ const onSubmitHandler = (event) => {
       <Popover.Body>
     {/* {data.title} */}
     {data.status==1 ? 
-    <p> The Person {data.name} Already Allocated this slot <br /><br/><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
+    <p> The Person {data.name} Already booked this slot. <br /><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
     Move to free
   </Button></span> </p>:
     // <Button onClick={()=>{fillSlot(data.id)}}>Free Up</Button>
     <Button variant="primary" onClick={()=>{handleShow(data.id)}}>
-        Available, Book the slot
+        Available, Book this Slot
       </Button>
     }
       </Popover.Body>
