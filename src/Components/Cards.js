@@ -105,9 +105,10 @@ const movetoFree = (num) => {
   //console.log(index)
    
       allocatedList.splice(index, 1)
-      alert(`The  slot ${num} is now available to book`)
       arr[num].status = 0;
       setAllocatedList(allocatedList)
+      alert(`The  slot ${num} is now available to book`)
+      
     
 
 }
