@@ -74,7 +74,6 @@ useEffect(() => {
 //console.log(dataList);
 //setSlotlist(arr);
  const addMore = ()=>{
-  alert(range)
     // setRange(range + 10)
     setRange(range => range+10)
     getPosts()
