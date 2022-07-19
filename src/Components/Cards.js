@@ -74,6 +74,7 @@ useEffect(() => {
 //console.log(dataList);
 //setSlotlist(arr);
  const addMore = ()=>{
+  alert(range)
     // setRange(range + 10)
     setRange(range => range+10)
     getPosts()
@@ -175,7 +176,9 @@ return (
                         <div className="border1 top text-center"> {slot.title} 
                         
                     <OverlayTrigger trigger="click" rootClose  placement="right" overlay={popover(slot)}>
+                    
                     <Button variant="success">Book Slot</Button>
+                    
                     </OverlayTrigger>
                         
                         </div>
@@ -197,7 +200,7 @@ return (
         <Modal.Body>
             <form onSubmit={onSubmitHandler}>
             <div><label htmlFor="name">Name</label></div>
-            <div><input id="name" value={name}  onChange={(e) => setName(e.target.value)} type="text"/></div>
+            <div><input id="name" value={name}  required onChange={(e) => setName(e.target.value)} type="text"/></div>
             <div><label htmlFor="mobile">Mobile</label></div>
             <div><input id="mobile" value={mobile} onChange={(e) => setMobile(e.target.value)} type="number"/></div>
             <input type="submit"/>
