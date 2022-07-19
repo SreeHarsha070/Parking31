@@ -167,7 +167,20 @@ const onSubmitHandler = (event) => {
 return (
     <Container>
     <Row>
-        <h3 style={{textAlign:"center",marginTop:"20px",marginBottom:"20px",textDecoration:"underline"}}>Parking Management System - HumBee Assignment</h3>
+        <nav class="flex align-center">
+  <p><span>Parking</span>Management</p>
+  <ul>
+    <li class="big-screens">
+      <a href="https://github.com/SreeHarsha070/Parking31" target="_blank"><button class="btn register">Github</button></a>
+      
+      <a href="https://drive.google.com/file/d/1bLIbfDUaMBAgkU4kBm_wBhN0v3Oe8yoT/view?usp=sharing" target="_blank"><button class="btn login">Resume</button></a>
+    </li>
+    <li class="small-screens">
+      <i class="fa-solid fa-bars"></i>
+    </li>
+  </ul>
+</nav>
+    
         {
             dataList.map((slot, index)=>{
                 return(
