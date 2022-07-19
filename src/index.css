@@ -41,7 +41,7 @@ nav {
   align-items: center;
   font-size: 20px;
   padding: 0.75rem 5vw;
-  box-shadow: 0 0 30px lightgray;
+/*   box-shadow: 0 0 30px lightgray; */
 }
 
 nav span {
