@@ -1,12 +1,11 @@
-body{
-  background-color: #8EC5FC !important;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%) !important;
- 
-}
 
+body{
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%) !important;
+}
 .App {
-/*   background-color: #8EC5FC;
-background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
+
+/* background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
+/* border-style: dotted; */
 
   padding: 10px;
   height: 100vh;
@@ -133,4 +132,6 @@ strong{
 .modal-header{
   background: #1d241e;
     color: #fff;
+    border: #1d241e;
+    border-style: dotted;
 }
