@@ -74,7 +74,10 @@ useEffect(() => {
 //console.log(dataList);
 //setSlotlist(arr);
  const addMore = ()=>{
-    setRange(range + 10)
+  alert(range)
+    // setRange(range + 10)
+    setRange(range => range+10)
+    getPosts()
  }
 
 
@@ -148,7 +151,7 @@ const onSubmitHandler = (event) => {
       <Popover.Header as="h3">Menu</Popover.Header>
       <Popover.Body>
    
-    {data.status==1 ? 
+    {data.status===1 ? 
     <p> {data.name} Already Booked <br /><br></br><span>Options : <Button variant="primary" onClick={()=>{movetoFree(data.id)}}>
     Move to free
   </Button></span> </p>:
