@@ -124,3 +124,7 @@ span{
 strong{
   color:white;
 }
+.modal-header{
+  background: #1d241e;
+    color: #fff;
+}
