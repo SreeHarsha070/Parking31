@@ -166,7 +166,7 @@ const onSubmitHandler = (event) => {
 return (
     <Container>
     <Row>
-        <h3 style={{textAlign:"center",marginTop:"20px",marginBottom:"20px",textDecoration:"underline"}}>Parking Management System</h3>
+        <h3 style={{textAlign:"center",marginTop:"20px",marginBottom:"20px",textDecoration:"underline"}}>Parking Management System - HumBee Assignment</h3>
         {
             dataList.map((slot, index)=>{
                 return(
