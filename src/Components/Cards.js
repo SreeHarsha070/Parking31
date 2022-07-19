@@ -172,7 +172,7 @@ return (
                 return(
                   <Col style={{marginTop:"10px"}} md={2} key={index}>
                     <div className="ranga1">
-                        <div className="top text-center"> {slot.title} 
+                        <div className="border1 top text-center"> {slot.title} 
                         
                     <OverlayTrigger trigger="click" rootClose  placement="right" overlay={popover(slot)}>
                     <Button variant="success">Book Slot</Button>
