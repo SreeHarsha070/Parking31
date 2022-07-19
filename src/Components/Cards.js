@@ -22,7 +22,7 @@ function Cards() {
 
     const handleClose = () => setShow(false);
     
-    const [range, setRange] = useState(10);
+    const [range, setRange] = useState(50);
     const [cardata, setCardata] = useState([])
     const [allocatedList, setAllocatedList] = useState([]);
     const emprtyslots = [];
